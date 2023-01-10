@@ -1,0 +1,21 @@
+{
+  "name": "css-hh-positioned-layout",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/techupth/css-hh-positioned-layout.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/techupth/css-hh-positioned-layout/issues"
+  },
+  "homepage": "https://github.com/techupth/css-hh-positioned-layout#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.29.2"
+  }
+}

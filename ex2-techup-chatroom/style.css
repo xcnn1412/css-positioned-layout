@@ -1,1 +1,151 @@
-/* Start coding here */
+/* ===== CSS CUSTOM PROPERTIES ===== */
+:root {
+    --primary-green: #4CAF50;
+    --dark-gray: #666;
+    --light-gray: #e0e0e0;
+    --background-color: #f5f5f5;
+    --white: #fff;
+    --text-dark: #333;
+    
+    --message-width: 200px;
+    --message-spacing: 70px;
+    --border-radius: 25px;
+    --padding-horizontal: 20px;
+}
+
+/* ===== RESET & BASE STYLES ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--background-color);
+    height: 100vh;
+}
+
+/* ===== LAYOUT CONTAINER ===== */
+.container {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+/* ===== HEADER STYLES ===== */
+.header {
+    background-color: var(--dark-gray);
+    color: var(--white);
+    padding: 15px var(--padding-horizontal);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+}
+
+.header h1 {
+    font-size: 24px;
+    font-weight: normal;
+}
+
+/* ===== CHAT AREA ===== */
+.chat-area {
+    padding-top: var(--message-spacing);
+    height: 100vh;
+    position: relative;
+}
+
+/* ===== MESSAGE BASE STYLES ===== */
+.message {
+    position: absolute;
+    width: var(--message-width);
+    padding: 12px var(--padding-horizontal);
+    border-radius: var(--border-radius);
+    font-size: 16px;
+}
+
+/* ===== LEFT SIDE MESSAGES (EMOJI BUBBLES) ===== */
+.left-message {
+    left: var(--padding-horizontal);
+    background-color: var(--dark-gray);
+    color: var(--white);
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 15px;
+}
+
+/* Left message positions */
+.left-message:first-of-type {
+    top: 310px; /* Message 4: 😊 */
+}
+
+.left-message:nth-of-type(2) {
+    top: 380px; /* Message 5: 🤔 */
+}
+
+.emoji {
+    font-size: 20px;
+}
+
+/* ===== RIGHT SIDE MESSAGES ===== */
+.right-message {
+    right: var(--padding-horizontal);
+    background-color: var(--primary-green);
+    color: var(--white);
+    text-align: right;
+}
+
+/* Right message positions */
+.right-message:first-of-type {
+    top: 100px; /* Message 1: สวัสดีจ้า */
+}
+
+.right-message:first-of-type::before {
+    content: "▲";
+    position: absolute;
+    top: -15px;
+    right: 3px;
+    color: var(--primary-green);
+    font-size: 28px;
+    z-index: 10;
+    transform: rotate(15deg);
+}
+
+.right-message:last-of-type {
+    top: 240px; /* Message 3: 😘😊 */
+}
+
+/* ===== RIGHT TEXT MESSAGE (GRAY BUBBLE) ===== */
+.right-text {
+    right: var(--padding-horizontal);
+    top: 175px; /* Message 2: Coding สนุกจังเลย */
+    background-color: var(--light-gray);
+    color: var(--text-dark);
+    text-align: right;
+    font-size: 14px;
+}
+
+/* ===== CIRCLE WITH X ABOVE RIGHT-TEXT ===== */
+.right-text::before {
+    content: "×";
+    position: absolute;
+    top: -5px; /* Position above the right-text element */
+    right: 0;
+    width: 15px;
+    height: 15px;
+    background-color: var(--dark-gray);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
